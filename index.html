@@ -1,54 +1,173 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>St. Christopher's Academy | Student Project</title>
-<style>
-:root{--blue:#163c74;--light:#eef5ff;--gold:#ffcf4b}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--light);color:#253348;line-height:1.5}header{background:linear-gradient(120deg,#163c74,#3685c8);color:white;text-align:center;padding:44px 18px}header h1{margin:0;font-size:clamp(26px,5vw,42px)}nav{background:var(--gold);text-align:center;padding:13px}nav a{display:inline-block;color:#163c74;text-decoration:none;font-weight:bold;margin:5px 12px}main section{padding:35px 18px;text-align:center;max-width:1050px;margin:auto}h2{color:var(--blue)}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:16px;margin-top:25px}.card{border:0;border-radius:14px;background:white;padding:23px 12px;box-shadow:0 3px 10px #0002;color:var(--blue);font-size:17px;font-weight:bold;cursor:pointer}.card:hover,.card:focus-visible{background:#dbeaff;outline:2px solid #3976c6}.card span{display:block;font-size:34px;margin-bottom:9px}#lesson{background:white;border-radius:15px;padding:20px;box-shadow:0 3px 10px #0002;margin-top:24px;min-height:110px}#activities{background:#deecff;max-width:none}footer{background:var(--blue);color:white;text-align:center;padding:22px}p{max-width:700px;margin:12px auto}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172a46">
+  <title>St. Christopher's Academy | Student Project</title>
+  <style>
+    :root { --navy:#172a46; --teal:#117b80; --gold:#f0bd62; --paper:#f5f8fb; --text:#25364b; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:Arial,sans-serif; background:var(--paper); color:var(--text); line-height:1.6; }
+    header { background:linear-gradient(130deg,#172a46,#117b80); color:white; padding:64px 20px; text-align:center; }
+    header .tag { color:var(--gold); font-weight:bold; letter-spacing:2px; font-size:12px; }
+    header h1 { font-size:clamp(32px,6vw,58px); margin:12px 0; }
+    header .motto { font-family:Georgia,serif; font-style:italic; font-size:22px; }
+    nav { background:white; padding:14px; display:flex; justify-content:center; flex-wrap:wrap; gap:16px; box-shadow:0 2px 12px #172a4615; }
+    nav a { text-decoration:none; color:var(--navy); font-weight:bold; font-size:14px; }
+    main { max-width:1050px; margin:auto; padding:0 18px; }
+    section { padding:45px 0; }
+    h2 { font-family:Georgia,serif; color:var(--navy); font-size:30px; margin:0 0 15px; }
+    .lead { color:#607187; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
+    .card { background:white; border:1px solid #e2e9ef; border-radius:18px; padding:24px; box-shadow:0 6px 22px #172a460c; }
+    .card h3 { margin:0 0 8px; color:var(--navy); }
+    .card p { margin:0; }
+    .highlight { border-top:5px solid var(--gold); }
+    .clock { color:var(--teal); font-size:32px; font-weight:bold; }
+    .subject { cursor:pointer; text-align:left; font:inherit; color:var(--navy); font-weight:bold; transition:transform .15s; }
+    .subject:hover,.subject:focus-visible { transform:translateY(-3px); border-color:var(--teal); }
+    .subject .emoji { font-size:30px; display:block; margin-bottom:10px; }
+    #subject-detail { margin-top:20px; padding:22px; border-left:5px solid var(--teal); background:#e4f2f2; border-radius:12px; }
+    table { width:100%; border-collapse:collapse; }
+    td { padding:11px 8px; border-bottom:1px solid #e2e9ef; }
+    td:last-child { text-align:right; font-weight:bold; }
+    .small { font-size:13px; color:#607187; }
+    footer { text-align:center; padding:32px 15px; background:var(--navy); color:white; }
+    footer p { margin:5px; }
+    @media(max-width:550px) { header { padding:48px 15px; } h2 { font-size:27px; } .clock { font-size:28px; } }
+  </style>
 </head>
 <body>
-<header id="home"><h1>🏫 St. Christopher's Academy</h1><p>Welcome to Our School Website</p><p>Learning • Knowledge • Excellence</p></header>
-<nav aria-label="Main navigation"><a href="#home">Home</a><a href="#about">About</a><a href="#subjects">Subjects</a><a href="#activities">Activities</a><a href="#contact">Contact</a></nav>
-<main>
-<section id="about"><h2>About Our School</h2><p>Welcome to this student-created website project for St. Christopher's Academy in Vepery, Chennai. Explore different school subjects and learning activities.</p></section>
-<section id="subjects"><h2>📚 Explore Our Subjects</h2><p>Tap a subject to view its learning topics.</p><div class="cards">
-<button class="card" data-subject="English"><span>📖</span>English</button>
-<button class="card" data-subject="Mathematics"><span>➗</span>Mathematics</button>
-<button class="card" data-subject="Science"><span>🔬</span>Science</button>
-<button class="card" data-subject="Social Science"><span>🌍</span>Social Science</button>
-<button class="card" data-subject="Tamil"><span>📗</span>Tamil</button>
-<button class="card" data-subject="Hindi"><span>📝</span>Hindi</button>
-<button class="card" data-subject="Computer Science"><span>💻</span>Computer Science</button>
-<button class="card" data-subject="Art & Craft"><span>🎨</span>Art & Craft</button>
-<button class="card" data-subject="Physical Education"><span>⚽</span>Physical Education</button>
-<button class="card" data-subject="Environmental Studies"><span>🌱</span>Environmental Studies</button>
-</div><div id="lesson" aria-live="polite"><h3>Choose a subject above</h3><p>Its topics will appear here.</p></div></section>
-<section id="activities"><h2>🏆 Learning Activities</h2><p>🎨 Art and craft projects · ⚽ Sports and games · 🎤 Cultural programmes · 📚 Reading · 🔬 Science experiments</p></section>
-<section id="contact"><h2>📍 Contact</h2><p>St. Christopher's Academy — Vepery, Chennai, Tamil Nadu</p><p>For official contact details, please refer to the school's verified communication channels.</p></section>
-</main>
-<footer>© 2026 St. Christopher's Academy — Unofficial student website project</footer>
-<script>
-const topics={
-'English':'Reading, grammar, writing, poetry and stories.',
-'Mathematics':'Numbers, fractions, algebra, geometry and problem solving.',
-'Science':'Physics, Chemistry, Biology and experiments.',
-'Social Science':'History, Geography, Civics and communities.',
-'Tamil':'Tamil reading, writing, vocabulary and literature.',
-'Hindi':'Hindi reading, vocabulary, grammar and writing.',
-'Computer Science':'Computer basics, coding, internet safety and technology.',
-'Art & Craft':'Drawing, painting, paper crafts and creativity.',
-'Physical Education':'Fitness, games, teamwork and sports.',
-'Environmental Studies':'Plants, animals, water, nature and the environment.'
-};
-document.querySelectorAll('[data-subject]').forEach(button=>{
-button.addEventListener('click',()=>{
-const subject=button.dataset.subject;
-document.getElementById('lesson').innerHTML='<h3>'+subject+'</h3><p>'+topics[subject]+'</p>';
-document.getElementById('lesson').scrollIntoView({behavior:'smooth',block:'nearest'});
-});
-});
-</script>
+  <header id="home">
+    <div class="tag">VEPERY • CHENNAI</div>
+    <h1>🏫 St. Christopher's Academy</h1>
+    <p class="motto">Seek and Ye Shall Find</p>
+    <p>Welcome to our student-created school website</p>
+  </header>
+
+  <nav aria-label="Website navigation">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#subjects">Subjects</a>
+    <a href="#timings">Timings</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>Welcome to Our School</h2>
+      <p class="lead">Explore subjects, school activities and useful information in one place. This is an unofficial student website project for St. Christopher's Academy.</p>
+      <div class="grid">
+        <article class="card highlight">
+          <h3>📢 Announcements</h3>
+          <p>Welcome, students! Watch this space for school updates.</p>
+        </article>
+        <article class="card highlight">
+          <h3>🕒 Current Time</h3>
+          <div id="clock" class="clock" aria-live="off">Loading...</div>
+          <p class="small">Chennai, India</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="subjects">
+      <h2>📚 Explore Our Subjects</h2>
+      <p class="lead">Tap a subject to see what students can learn.</p>
+      <div class="grid">
+        <button class="card subject" data-subject="English"><span class="emoji">📖</span>English</button>
+        <button class="card subject" data-subject="Mathematics"><span class="emoji">➗</span>Mathematics</button>
+        <button class="card subject" data-subject="Science"><span class="emoji">🔬</span>Science</button>
+        <button class="card subject" data-subject="Social Science"><span class="emoji">🌍</span>Social Science</button>
+        <button class="card subject" data-subject="Tamil"><span class="emoji">📗</span>Tamil</button>
+        <button class="card subject" data-subject="Hindi"><span class="emoji">📝</span>Hindi</button>
+        <button class="card subject" data-subject="Computer Science"><span class="emoji">💻</span>Computer Science</button>
+        <button class="card subject" data-subject="Art and Craft"><span class="emoji">🎨</span>Art and Craft</button>
+        <button class="card subject" data-subject="Physical Education"><span class="emoji">⚽</span>Physical Education</button>
+        <button class="card subject" data-subject="Environmental Studies"><span class="emoji">🌱</span>Environmental Studies</button>
+      </div>
+      <div id="subject-detail" aria-live="polite">
+        <strong>Choose a subject above.</strong>
+        <p>Its topics will appear here.</p>
+      </div>
+    </section>
+
+    <section id="timings">
+      <h2>📅 School Timings</h2>
+      <div class="card">
+        <p class="small">Sample schedule from the student project. Please confirm with the school before relying on it.</p>
+        <table>
+          <tr><td>Assembly</td><td>8:30–9:00 AM</td></tr>
+          <tr><td>Class periods</td><td>40 minutes</td></tr>
+          <tr><td>Morning break</td><td>10:20–10:30 AM</td></tr>
+          <tr><td>Lunch</td><td>1:00–2:30 PM</td></tr>
+          <tr><td>Classes 1–5 finish</td><td>3:00 PM</td></tr>
+          <tr><td>Classes 6–8 finish</td><td>3:40 PM</td></tr>
+          <tr><td>Classes 9–10 finish</td><td>4:45 PM</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section id="events">
+      <h2>📰 News and Events</h2>
+      <div class="grid">
+        <article class="card"><h3>Latest News</h3><p>News and announcements will be added here.</p></article>
+        <article class="card"><h3>📸 School Events</h3><p>Sports, cultural programmes, competitions and celebrations.</p></article>
+        <article class="card"><h3>🏆 Student Achievements</h3><p>A space to celebrate student projects and accomplishments.</p></article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>📍 Contact</h2>
+      <div class="card">
+        <h3>St. Christopher's Academy</h3>
+        <p>Vepery, Chennai, Tamil Nadu</p>
+        <p class="small">For official phone numbers and announcements, please use the school's verified communication channels.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>St. Christopher's Academy</strong>
+    <p>Seek and Ye Shall Find</p>
+    <p class="small">© 2026 • Unofficial student website project</p>
+  </footer>
+
+  <script>
+    const topics = {
+      "English":"Reading, writing, grammar, poetry and stories.",
+      "Mathematics":"Numbers, fractions, algebra, geometry and problem solving.",
+      "Science":"Physics, Chemistry, Biology and practical experiments.",
+      "Social Science":"History, Geography, Civics and Economics.",
+      "Tamil":"Tamil reading, writing, grammar and literature.",
+      "Hindi":"Hindi vocabulary, grammar, reading and writing.",
+      "Computer Science":"Computer basics, coding, digital skills and internet safety.",
+      "Art and Craft":"Drawing, painting, design and creative projects.",
+      "Physical Education":"Sports, fitness, teamwork and games.",
+      "Environmental Studies":"Plants, animals, water, nature and our surroundings."
+    };
+    document.querySelectorAll("[data-subject]").forEach(button => {
+      button.addEventListener("click", () => {
+        const name = button.dataset.subject;
+        const detail = document.getElementById("subject-detail");
+        detail.replaceChildren();
+        const heading = document.createElement("h3");
+        const paragraph = document.createElement("p");
+        heading.textContent = name;
+        paragraph.textContent = topics[name];
+        detail.append(heading, paragraph);
+        detail.scrollIntoView({ behavior:"smooth", block:"nearest" });
+      });
+    });
+    function updateClock() {
+      document.getElementById("clock").textContent = new Intl.DateTimeFormat("en-IN", {
+        timeZone:"Asia/Kolkata", hour:"2-digit", minute:"2-digit", second:"2-digit", hour12:true
+      }).format(new Date());
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
 </body>
 </html>
