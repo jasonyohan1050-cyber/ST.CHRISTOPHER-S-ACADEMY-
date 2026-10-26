@@ -1,102 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>St. Christopher's Academy | Student Website</title>
-<style>
-:root{--navy:#192e4b;--teal:#087e83;--gold:#f4c05d;--bg:#f2f6fa;--text:#233650}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.5}
-header{background:linear-gradient(115deg,var(--navy),var(--teal));color:white;text-align:center;padding:30px 18px 46px}
-header .place{color:var(--gold);font-size:12px;letter-spacing:2px;font-weight:bold}
-.logo{display:block;width:120px;max-height:150px;object-fit:contain;background:white;padding:8px;border-radius:12px;margin:18px auto}
-header h1{font-size:clamp(27px,5vw,44px);margin:15px 0}header .motto{font:italic 21px Georgia,serif}header p{margin-bottom:0}
-nav{background:white;text-align:center;padding:15px 10px;box-shadow:0 3px 10px #152b4210;position:sticky;top:0;z-index:2}
-nav a{display:inline-block;text-decoration:none;color:var(--navy);font-size:13px;font-weight:bold;margin:4px 8px}
-main{max-width:1150px;margin:auto;padding:10px 16px 55px}section{padding-top:44px;scroll-margin-top:65px}h2{font: bold 29px Georgia,serif;color:var(--navy)}.muted{color:#667c93}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:14px}
-.card{background:white;border:1px solid #e4eaf0;border-radius:14px;padding:20px;box-shadow:0 6px 18px #182b4208}.card h3{margin:0 0 8px;font-size:16px}.card p{margin:0;font-size:14px}.highlight{border-top:4px solid var(--gold)}.clock{font-size:23px;font-weight:bold;color:var(--teal)}
-.subject{font: bold 14px Arial,sans-serif;color:var(--navy);text-align:left;cursor:pointer;min-height:112px}.subject span{display:block;font-size:28px;margin-bottom:12px}.subject:hover,.subject:focus-visible{border-color:var(--teal);outline:2px solid transparent}.detail{background:#e2f1f2;border-left:4px solid var(--teal);padding:18px;border-radius:10px;margin-top:16px}
-table{border-collapse:collapse;width:100%}td{padding:12px 5px;border-bottom:1px solid #e5ebf0;font-size:14px}td:last-child{text-align:right;font-weight:bold;white-space:nowrap}footer{text-align:center;background:var(--navy);color:white;padding:30px 15px}footer p{margin:8px}.fine{font-size:12px;color:#a8b6c9}
-@media(max-width:500px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:15px}td{font-size:12px}header{padding-top:24px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#19354e">
+  <title>St. Christopher's Academy | Student Website</title>
+  <style>
+    :root{--navy:#192f4d;--teal:#087f84;--gold:#f1bd5e;--page:#f3f7fb;--text:#203550;--muted:#62768d}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--page);color:var(--text);line-height:1.55}
+    header{background:linear-gradient(115deg,#19354e,#087f84);color:white;text-align:center;padding:30px 16px 48px}
+    .location{color:var(--gold);font-size:11px;font-weight:bold;letter-spacing:2px}
+    .school-logo{display:block;width:112px;height:112px;object-fit:contain;margin:18px auto;background:white;border-radius:12px;padding:8px}
+    h1{font-size:clamp(29px,5vw,46px);line-height:1.2;margin:18px 0 12px}header .motto{font-family:Georgia,serif;font-size:20px;font-style:italic}header .subtitle{font-size:14px}
+    nav{display:flex;justify-content:center;gap:17px;flex-wrap:wrap;padding:14px;background:white;box-shadow:0 2px 9px #20355014;position:sticky;top:0;z-index:5}
+    nav a{font-size:13px;text-decoration:none;color:var(--navy);font-weight:bold}
+    main{max-width:1100px;margin:auto;padding:12px 18px 48px}section{padding-top:40px;scroll-margin-top:60px}
+    h2{font-family:Georgia,serif;font-size:29px;color:var(--navy);margin:0 0 15px}.intro{color:var(--muted);font-size:14px}
+    .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{background:white;border:1px solid #e3eaf0;border-radius:15px;padding:20px;box-shadow:0 7px 20px #192f4d08}
+    .highlight{border-top:4px solid var(--gold)}.card h3{margin:0 0 10px;font-size:16px}.card p{margin:0;font-size:14px}
+    .clock{font-weight:bold;font-size:24px;color:var(--teal)}.small{font-size:12px;color:var(--muted)}
+    .subjects{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:13px;margin-top:18px}
+    .subject{background:white;border:1px solid #e3eaf0;border-radius:15px;padding:22px 14px;min-height:114px;text-align:left;color:var(--navy);font-size:14px;font-weight:bold;cursor:pointer}
+    .subject span{display:block;font-size:26px;margin-bottom:12px}.subject:hover,.subject:focus-visible{border-color:var(--teal);outline:2px solid transparent;box-shadow:0 5px 15px #087f8422}
+    #subject-detail{margin-top:16px;background:#e3f2f2;border-left:4px solid var(--teal);border-radius:10px;padding:19px;font-size:14px}
+    #subject-detail h3{margin:0 0 8px}#subject-detail p{margin:0}
+    table{width:100%;border-collapse:collapse;font-size:14px}td{padding:12px 6px;border-bottom:1px solid #e8eef3}td:last-child{text-align:right;font-weight:bold;white-space:nowrap}
+    .news{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.news .card{min-height:125px}
+    a.phone{font-weight:bold;color:#007e83;text-decoration:underline}footer{text-align:center;background:var(--navy);color:white;padding:32px 18px}footer p{margin:7px 0}footer .credit{color:var(--gold);font-weight:bold;margin-top:16px}
+    @media(max-width:600px){.cards,.news{grid-template-columns:1fr}h2{font-size:26px}nav{gap:13px}nav a{font-size:12px}.subjects{grid-template-columns:repeat(2,minmax(0,1fr))}td{font-size:12px}header{padding-bottom:36px}}
+  </style>
 </head>
 <body>
-<header id="home">
-<div class="place">VEPERY · CHENNAI</div>
-<img class="logo" src="images%20%284%29.jpeg" alt="St. Christopher's Academy school logo">
-<h1>St. Christopher's Academy</h1>
-<p class="motto">Seek and Ye Shall Find</p>
-<p>Welcome to our student-created school website</p>
-</header>
-<nav aria-label="Main navigation">
-<a href="#home">Home</a><a href="#about">About</a><a href="#subjects">Subjects</a><a href="#timings">Timings</a><a href="#events">Events</a><a href="#contact">Contact</a>
-</nav>
-<main>
-<section id="about">
-<h2>Welcome to Our School</h2>
-<p class="muted">Explore subjects, school activities and useful information in one place. This is an unofficial student website project for St. Christopher's Academy.</p>
-<div class="grid">
-<div class="card highlight"><h3>📢 Announcements</h3><p>Welcome, students! Watch this space for school updates.</p></div>
-<div class="card highlight"><h3>🕒 Current Time</h3><div class="clock" id="clock">Loading...</div><p class="muted">Chennai, India</p></div>
-</div>
-</section>
-<section id="subjects">
-<h2>📚 Explore Our Subjects</h2><p class="muted">Tap a subject to see what students can learn.</p>
-<div class="grid" id="subjectGrid">
-<button class="card subject" data-subject="English"><span>📖</span>English</button>
-<button class="card subject" data-subject="Mathematics"><span>➗</span>Mathematics</button>
-<button class="card subject" data-subject="Science"><span>🔬</span>Science</button>
-<button class="card subject" data-subject="Social Science"><span>🌍</span>Social Science</button>
-<button class="card subject" data-subject="Tamil"><span>📗</span>Tamil</button>
-<button class="card subject" data-subject="Hindi"><span>📝</span>Hindi</button>
-<button class="card subject" data-subject="Computer Science"><span>💻</span>Computer Science</button>
-<button class="card subject" data-subject="Art and Craft"><span>🎨</span>Art and Craft</button>
-<button class="card subject" data-subject="Physical Education"><span>⚽</span>Physical Education</button>
-<button class="card subject" data-subject="Environmental Studies"><span>🌱</span>Environmental Studies</button>
-</div>
-<div class="detail" aria-live="polite"><strong id="subjectTitle">Choose a subject above.</strong><p id="subjectDescription">Its topics will appear here.</p></div>
-</section>
-<section id="timings"><h2>📅 School Timings</h2>
-<div class="card"><p class="muted" style="font-size:12px">Sample schedule for this student project. Please confirm all timings with the school.</p>
-<table><tbody>
-<tr><td>Assembly</td><td>8:30–9:00 AM</td></tr>
-<tr><td>Class periods</td><td>40 minutes</td></tr>
-<tr><td>Morning break</td><td>10:20–10:30 AM</td></tr>
-<tr><td>Lunch break</td><td>12:30–1:00 PM</td></tr>
-<tr><td>Classes 1–5 finish</td><td>3:00 PM</td></tr>
-<tr><td>Classes 6–8 finish</td><td>3:40 PM</td></tr>
-<tr><td>Classes 9–10 finish</td><td>4:45 PM</td></tr>
-</tbody></table></div></section>
-<section id="events"><h2>📰 News and Events</h2><div class="grid">
-<div class="card"><h3>Latest News</h3><p>News and announcements will be added here.</p></div>
-<div class="card"><h3>📸 School Events</h3><p>Sports, cultural programmes, competitions and celebrations.</p></div>
-<div class="card"><h3>🏆 Student Achievements</h3><p>A space to celebrate student projects and accomplishments.</p></div>
-</div></section>
-<section id="contact"><h2>📍 Contact</h2><div class="card"><h3>St. Christopher's Academy</h3><p>Vepery, Chennai, Tamil Nadu</p><p class="muted">For official phone numbers and announcements, please use the school's verified communication channels.</p></div></section>
-</main>
-<footer><strong>St. Christopher's Academy</strong><p>Seek and Ye Shall Find</p><p class="fine">© 2026 · Unofficial student website project</p></footer>
-<script>
-const topics={
-'English':'Reading, grammar, writing, poetry and stories.',
-'Mathematics':'Numbers, fractions, algebra, geometry and problem solving.',
-'Science':'Physics, Chemistry, Biology and experiments.',
-'Social Science':'History, Geography, Civics and communities.',
-'Tamil':'Tamil reading, writing, vocabulary and literature.',
-'Hindi':'Hindi reading, vocabulary, grammar and writing.',
-'Computer Science':'Computer basics, coding, internet safety and technology.',
-'Art and Craft':'Drawing, painting, paper crafts and creativity.',
-'Physical Education':'Fitness, games, teamwork and sports.',
-'Environmental Studies':'Plants, animals, water, nature and the environment.'
-};
-document.querySelectorAll('[data-subject]').forEach(button=>{
- button.addEventListener('click',()=>{
-  const name=button.dataset.subject;
-  document.getElementById('subjectTitle').textContent=name;
-  document.getElementById('subjectDescription').textContent=topics[name];
- });
-});
-function updateClock(){document.getElementById('clock').textContent=new Intl.DateTimeFormat('en-IN',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true}).format(new Date());}
-updateClock();setInterval(updateClock,1000);
-</script>
+  <header id="home">
+    <div class="location">VEPERY · CHENNAI</div>
+    <img class="school-logo" src="images%20%284%29.jpeg" alt="St. Christopher's Academy school logo">
+    <h1>St. Christopher's Academy</h1>
+    <p class="motto">Seek and Ye Shall Find</p>
+    <p class="subtitle">Welcome to our student-created school website</p>
+  </header>
+  <nav aria-label="Main navigation">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#subjects">Subjects</a><a href="#schedule">Timings</a><a href="#news">Events</a><a href="#contact">Contact</a>
+  </nav>
+  <main>
+    <section id="about">
+      <h2>Welcome to Our School</h2>
+      <p class="intro">Explore subjects, school activities and useful information in one place. This is an unofficial student website project for St. Christopher's Academy.</p>
+      <div class="cards">
+        <div class="card highlight"><h3>📢 Announcements</h3><p>Welcome, students! Watch this space for school updates.</p></div>
+        <div class="card highlight"><h3>🕒 Current Time</h3><div class="clock" id="clock">Loading...</div><div class="small">Chennai, India</div></div>
+      </div>
+    </section>
+    <section id="subjects">
+      <h2>📚 Explore Our Subjects</h2><p class="intro">Tap a subject to see what students can learn.</p>
+      <div class="subjects">
+        <button class="subject" data-subject="English"><span>📖</span>English</button>
+        <button class="subject" data-subject="Mathematics"><span>➗</span>Mathematics</button>
+        <button class="subject" data-subject="Science"><span>🔬</span>Science</button>
+        <button class="subject" data-subject="Social Science"><span>🌍</span>Social Science</button>
+        <button class="subject" data-subject="Tamil"><span>📗</span>Tamil</button>
+        <button class="subject" data-subject="Hindi"><span>📝</span>Hindi</button>
+        <button class="subject" data-subject="Computer Science"><span>💻</span>Computer Science</button>
+        <button class="subject" data-subject="Art and Craft"><span>🎨</span>Art and Craft</button>
+        <button class="subject" data-subject="Physical Education"><span>⚽</span>Physical Education</button>
+      </div>
+      <div id="subject-detail" aria-live="polite"><h3>Choose a subject above.</h3><p>Its topics will appear here.</p></div>
+    </section>
+    <section id="schedule">
+      <h2>📅 School Timings</h2>
+      <div class="card"><p class="small">Sample schedule for this student project. Please confirm all timings with the school.</p>
+        <table><tbody>
+          <tr><td>Assembly</td><td>8:30–9:00 AM</td></tr>
+          <tr><td>Class periods</td><td>40 minutes</td></tr>
+          <tr><td>Morning break</td><td>10:20–10:30 AM</td></tr>
+          <tr><td>Lunch break</td><td>12:30–1:00 PM</td></tr>
+          <tr><td>Classes 1–5 finish</td><td>3:00 PM</td></tr>
+          <tr><td>Classes 6–8 finish</td><td>3:40 PM</td></tr>
+          <tr><td>Classes 9–10 finish</td><td>4:45 PM</td></tr>
+        </tbody></table>
+      </div>
+    </section>
+    <section id="news">
+      <h2>📰 News and Events</h2>
+      <div class="news">
+        <div class="card"><h3>Latest News</h3><p>News and announcements will be added here.</p></div>
+        <div class="card"><h3>📸 School Events</h3><p>Sports, cultural programmes, competitions and celebrations.</p></div>
+        <div class="card"><h3>🏆 Student Achievements</h3><p>A space to celebrate student projects and accomplishments.</p></div>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>📍 Contact</h2>
+      <div class="card"><h3>St. Christopher's Academy</h3><p>Vepery, Chennai, Tamil Nadu</p><p style="margin-top:12px">📞 <a class="phone" href="tel:+917904998969">+91 79049 98969</a></p></div>
+    </section>
+  </main>
+  <footer>
+    <strong>St. Christopher's Academy</strong>
+    <p>Seek and Ye Shall Find</p>
+    <p class="small">© 2026 · Unofficial student website project</p>
+    <p class="credit">By Jason – Grade 9</p>
+  </footer>
+  <script>
+    const topics = {
+      'English':'Reading, grammar, writing, poetry and stories.',
+      'Mathematics':'Numbers, fractions, algebra, geometry and problem solving.',
+      'Science':'Physics, Chemistry, Biology and experiments.',
+      'Social Science':'History, Geography, Civics and communities.',
+      'Tamil':'Tamil reading, writing, vocabulary and literature.',
+      'Hindi':'Hindi reading, vocabulary, grammar and writing.',
+      'Computer Science':'Computer basics, coding, internet safety and technology.',
+      'Art and Craft':'Drawing, painting, paper crafts and creativity.',
+      'Physical Education':'Fitness, games, teamwork and sports.'
+    };
+    document.querySelectorAll('[data-subject]').forEach(button=>{
+      button.addEventListener('click',()=>{
+        const subject=button.dataset.subject;
+        const detail=document.getElementById('subject-detail');
+        detail.querySelector('h3').textContent=subject;
+        detail.querySelector('p').textContent=topics[subject];
+      });
+    });
+    function updateClock(){
+      document.getElementById('clock').textContent=new Intl.DateTimeFormat('en-IN',{
+        timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true
+      }).format(new Date());
+    }
+    updateClock();setInterval(updateClock,1000);
+  </script>
 </body>
 </html>
