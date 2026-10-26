@@ -3,55 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#172a46">
-  <title>St. Christopher's Academy | Student Project</title>
+  <title>St. Christopher's Academy | Student Website</title>
   <style>
-    :root { --navy:#172a46; --teal:#117b80; --gold:#f0bd62; --paper:#f5f8fb; --text:#25364b; }
+    :root { --navy:#172d4b; --teal:#087f83; --gold:#f3bf60; --bg:#f3f7fb; --text:#20344e; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
-    body { margin:0; font-family:Arial,sans-serif; background:var(--paper); color:var(--text); line-height:1.6; }
-    header { background:linear-gradient(130deg,#172a46,#117b80); color:white; padding:64px 20px; text-align:center; }
-    header .tag { color:var(--gold); font-weight:bold; letter-spacing:2px; font-size:12px; }
-    header h1 { font-size:clamp(32px,6vw,58px); margin:12px 0; }
-    header .motto { font-family:Georgia,serif; font-style:italic; font-size:22px; }
-    nav { background:white; padding:14px; display:flex; justify-content:center; flex-wrap:wrap; gap:16px; box-shadow:0 2px 12px #172a4615; }
-    nav a { text-decoration:none; color:var(--navy); font-weight:bold; font-size:14px; }
-    main { max-width:1050px; margin:auto; padding:0 18px; }
-    section { padding:45px 0; }
-    h2 { font-family:Georgia,serif; color:var(--navy); font-size:30px; margin:0 0 15px; }
-    .lead { color:#607187; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
-    .card { background:white; border:1px solid #e2e9ef; border-radius:18px; padding:24px; box-shadow:0 6px 22px #172a460c; }
-    .card h3 { margin:0 0 8px; color:var(--navy); }
+    body { margin:0; font-family:Arial, sans-serif; color:var(--text); background:var(--bg); line-height:1.6; }
+    header { background:linear-gradient(110deg,#17324f,#087f83); color:white; text-align:center; padding:32px 16px 45px; }
+    .place { color:var(--gold); font-size:12px; letter-spacing:2px; font-weight:bold; }
+    .logo { display:block; width:112px; max-width:40vw; height:auto; margin:16px auto; background:white; border-radius:12px; padding:8px; }
+    h1 { margin:12px 0; font-size:clamp(28px,5vw,46px); }
+    .motto { font-family:Georgia,serif; font-style:italic; font-size:20px; }
+    nav { background:white; display:flex; flex-wrap:wrap; justify-content:center; gap:16px; padding:14px; box-shadow:0 2px 8px #0001; }
+    nav a { color:var(--navy); text-decoration:none; font-weight:bold; font-size:13px; }
+    main { max-width:1100px; margin:auto; padding:12px 16px 45px; }
+    section { padding-top:36px; }
+    h2 { font-family:Georgia,serif; font-size:29px; color:var(--navy); }
+    .muted { color:#62758c; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(155px,1fr)); gap:14px; }
+    .card { background:white; border:1px solid #e5ebf1; border-radius:14px; padding:20px; box-shadow:0 4px 14px #142c4208; }
+    .card h3 { margin:0 0 8px; font-size:16px; }
     .card p { margin:0; }
-    .highlight { border-top:5px solid var(--gold); }
-    .clock { color:var(--teal); font-size:32px; font-weight:bold; }
-    .subject { cursor:pointer; text-align:left; font:inherit; color:var(--navy); font-weight:bold; transition:transform .15s; }
-    .subject:hover,.subject:focus-visible { transform:translateY(-3px); border-color:var(--teal); }
-    .subject .emoji { font-size:30px; display:block; margin-bottom:10px; }
-    #subject-detail { margin-top:20px; padding:22px; border-left:5px solid var(--teal); background:#e4f2f2; border-radius:12px; }
-    table { width:100%; border-collapse:collapse; }
-    td { padding:11px 8px; border-bottom:1px solid #e2e9ef; }
+    .welcome-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+    .welcome-grid .card { border-top:4px solid var(--gold); }
+    .clock { font-size:25px; font-weight:bold; color:var(--teal); }
+    .subject { cursor:pointer; text-align:left; color:var(--navy); font:inherit; font-weight:bold; }
+    .subject:hover,.subject:focus-visible { border-color:var(--teal); outline:2px solid transparent; }
+    .subject .emoji { display:block; font-size:28px; margin-bottom:8px; }
+    .detail { background:#e3f2f2; border-left:4px solid var(--teal); padding:18px; border-radius:10px; margin-top:16px; }
+    .detail h3 { margin:0 0 6px; }
+    .detail p { margin:0; }
+    table { border-collapse:collapse; width:100%; }
+    td { padding:11px 5px; border-bottom:1px solid #e8edf2; }
     td:last-child { text-align:right; font-weight:bold; }
-    .small { font-size:13px; color:#607187; }
-    footer { text-align:center; padding:32px 15px; background:var(--navy); color:white; }
+    footer { background:var(--navy); color:white; text-align:center; padding:28px 16px; }
     footer p { margin:5px; }
-    @media(max-width:550px) { header { padding:48px 15px; } h2 { font-size:27px; } .clock { font-size:28px; } }
+    @media(max-width:450px) { h2 { font-size:25px; } .card { padding:16px; } td { font-size:13px; } }
   </style>
 </head>
 <body>
   <header id="home">
-    <div class="tag">VEPERY • CHENNAI</div>
-    <h1>🏫 St. Christopher's Academy</h1>
+    <div class="place">VEPERY · CHENNAI</div>
+    <img class="logo" src="school-logo.jpg" alt="St. Christopher's Academy school logo">
+    <h1>St. Christopher's Academy</h1>
     <p class="motto">Seek and Ye Shall Find</p>
     <p>Welcome to our student-created school website</p>
   </header>
 
-  <nav aria-label="Website navigation">
+  <nav aria-label="Main navigation">
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#subjects">Subjects</a>
-    <a href="#timings">Timings</a>
+    <a href="#schedule">Timings</a>
     <a href="#events">Events</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -59,23 +62,16 @@
   <main>
     <section id="about">
       <h2>Welcome to Our School</h2>
-      <p class="lead">Explore subjects, school activities and useful information in one place. This is an unofficial student website project for St. Christopher's Academy.</p>
-      <div class="grid">
-        <article class="card highlight">
-          <h3>📢 Announcements</h3>
-          <p>Welcome, students! Watch this space for school updates.</p>
-        </article>
-        <article class="card highlight">
-          <h3>🕒 Current Time</h3>
-          <div id="clock" class="clock" aria-live="off">Loading...</div>
-          <p class="small">Chennai, India</p>
-        </article>
+      <p class="muted">Explore subjects, school activities and useful information in one place. This is an unofficial student website project for St. Christopher's Academy.</p>
+      <div class="welcome-grid">
+        <div class="card"><h3>📢 Announcements</h3><p>Welcome, students! Watch this space for school updates.</p></div>
+        <div class="card"><h3>🕒 Current Time</h3><div class="clock" id="clock">Loading...</div><small>Chennai, India</small></div>
       </div>
     </section>
 
     <section id="subjects">
       <h2>📚 Explore Our Subjects</h2>
-      <p class="lead">Tap a subject to see what students can learn.</p>
+      <p class="muted">Tap a subject to see what students can learn.</p>
       <div class="grid">
         <button class="card subject" data-subject="English"><span class="emoji">📖</span>English</button>
         <button class="card subject" data-subject="Mathematics"><span class="emoji">➗</span>Mathematics</button>
@@ -88,21 +84,18 @@
         <button class="card subject" data-subject="Physical Education"><span class="emoji">⚽</span>Physical Education</button>
         <button class="card subject" data-subject="Environmental Studies"><span class="emoji">🌱</span>Environmental Studies</button>
       </div>
-      <div id="subject-detail" aria-live="polite">
-        <strong>Choose a subject above.</strong>
-        <p>Its topics will appear here.</p>
-      </div>
+      <div class="detail" id="subject-detail" aria-live="polite"><h3>Choose a subject above.</h3><p>Its topics will appear here.</p></div>
     </section>
 
-    <section id="timings">
+    <section id="schedule">
       <h2>📅 School Timings</h2>
       <div class="card">
-        <p class="small">Sample schedule from the student project. Please confirm with the school before relying on it.</p>
+        <p class="muted"><small>Sample schedule for this student project. Please confirm all timings with the school.</small></p>
         <table>
           <tr><td>Assembly</td><td>8:30–9:00 AM</td></tr>
           <tr><td>Class periods</td><td>40 minutes</td></tr>
           <tr><td>Morning break</td><td>10:20–10:30 AM</td></tr>
-          <tr><td>Lunch</td><td>1:00–2:30 PM</td></tr>
+          <tr><td>Lunch break</td><td>12:30–1:00 PM</td></tr>
           <tr><td>Classes 1–5 finish</td><td>3:00 PM</td></tr>
           <tr><td>Classes 6–8 finish</td><td>3:40 PM</td></tr>
           <tr><td>Classes 9–10 finish</td><td>4:45 PM</td></tr>
@@ -113,9 +106,9 @@
     <section id="events">
       <h2>📰 News and Events</h2>
       <div class="grid">
-        <article class="card"><h3>Latest News</h3><p>News and announcements will be added here.</p></article>
-        <article class="card"><h3>📸 School Events</h3><p>Sports, cultural programmes, competitions and celebrations.</p></article>
-        <article class="card"><h3>🏆 Student Achievements</h3><p>A space to celebrate student projects and accomplishments.</p></article>
+        <div class="card"><h3>Latest News</h3><p>News and announcements will be added here.</p></div>
+        <div class="card"><h3>📸 School Events</h3><p>Sports, cultural programmes, competitions and celebrations.</p></div>
+        <div class="card"><h3>🏆 Student Achievements</h3><p>A space to celebrate student projects and accomplishments.</p></div>
       </div>
     </section>
 
@@ -124,7 +117,7 @@
       <div class="card">
         <h3>St. Christopher's Academy</h3>
         <p>Vepery, Chennai, Tamil Nadu</p>
-        <p class="small">For official phone numbers and announcements, please use the school's verified communication channels.</p>
+        <p class="muted"><small>For official phone numbers and announcements, please use the school's verified communication channels.</small></p>
       </div>
     </section>
   </main>
@@ -132,38 +125,37 @@
   <footer>
     <strong>St. Christopher's Academy</strong>
     <p>Seek and Ye Shall Find</p>
-    <p class="small">© 2026 • Unofficial student website project</p>
+    <small>© 2026 · Unofficial student website project</small>
   </footer>
 
   <script>
     const topics = {
-      "English":"Reading, writing, grammar, poetry and stories.",
-      "Mathematics":"Numbers, fractions, algebra, geometry and problem solving.",
-      "Science":"Physics, Chemistry, Biology and practical experiments.",
-      "Social Science":"History, Geography, Civics and Economics.",
-      "Tamil":"Tamil reading, writing, grammar and literature.",
-      "Hindi":"Hindi vocabulary, grammar, reading and writing.",
-      "Computer Science":"Computer basics, coding, digital skills and internet safety.",
-      "Art and Craft":"Drawing, painting, design and creative projects.",
-      "Physical Education":"Sports, fitness, teamwork and games.",
-      "Environmental Studies":"Plants, animals, water, nature and our surroundings."
+      'English': 'Reading, grammar, writing, poetry and stories.',
+      'Mathematics': 'Numbers, fractions, algebra, geometry and problem solving.',
+      'Science': 'Physics, Chemistry, Biology and experiments.',
+      'Social Science': 'History, Geography, Civics and communities.',
+      'Tamil': 'Tamil reading, writing, vocabulary and literature.',
+      'Hindi': 'Hindi reading, vocabulary, grammar and writing.',
+      'Computer Science': 'Computer basics, coding, internet safety and technology.',
+      'Art and Craft': 'Drawing, painting, paper crafts and creativity.',
+      'Physical Education': 'Fitness, games, teamwork and sports.',
+      'Environmental Studies': 'Plants, animals, water, nature and the environment.'
     };
-    document.querySelectorAll("[data-subject]").forEach(button => {
-      button.addEventListener("click", () => {
+    document.querySelectorAll('[data-subject]').forEach(button => {
+      button.addEventListener('click', () => {
         const name = button.dataset.subject;
-        const detail = document.getElementById("subject-detail");
+        const detail = document.getElementById('subject-detail');
         detail.replaceChildren();
-        const heading = document.createElement("h3");
-        const paragraph = document.createElement("p");
+        const heading = document.createElement('h3');
         heading.textContent = name;
+        const paragraph = document.createElement('p');
         paragraph.textContent = topics[name];
         detail.append(heading, paragraph);
-        detail.scrollIntoView({ behavior:"smooth", block:"nearest" });
       });
     });
     function updateClock() {
-      document.getElementById("clock").textContent = new Intl.DateTimeFormat("en-IN", {
-        timeZone:"Asia/Kolkata", hour:"2-digit", minute:"2-digit", second:"2-digit", hour12:true
+      document.getElementById('clock').textContent = new Intl.DateTimeFormat('en-IN', {
+        timeZone:'Asia/Kolkata', hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:true
       }).format(new Date());
     }
     updateClock();
