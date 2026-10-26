@@ -1,55 +1,54 @@
-<!DOCTYPE html>
-<html>
+!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>St. Christopher's Academy</title>
-
-    <style>
-        body {
-            font-family: Arial;
-            text-align: center;
-            background-color: #eaf4ff;
-            margin: 0;
-        }
-
-        header {
-            background-color: #1e4d8f;
-            color: white;
-            padding: 30px;
-        }
-
-        h1 {
-            margin: 0;
-        }
-
-        section {
-            padding: 30px;
-        }
-
-        button {
-            padding: 12px 25px;
-            font-size: 16px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>St. Christopher's Academy | Student Project</title>
+<style>
+:root{--blue:#163c74;--light:#eef5ff;--gold:#ffcf4b}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--light);color:#253348;line-height:1.5}header{background:linear-gradient(120deg,#163c74,#3685c8);color:white;text-align:center;padding:44px 18px}header h1{margin:0;font-size:clamp(26px,5vw,42px)}nav{background:var(--gold);text-align:center;padding:13px}nav a{display:inline-block;color:#163c74;text-decoration:none;font-weight:bold;margin:5px 12px}main section{padding:35px 18px;text-align:center;max-width:1050px;margin:auto}h2{color:var(--blue)}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:16px;margin-top:25px}.card{border:0;border-radius:14px;background:white;padding:23px 12px;box-shadow:0 3px 10px #0002;color:var(--blue);font-size:17px;font-weight:bold;cursor:pointer}.card:hover,.card:focus-visible{background:#dbeaff;outline:2px solid #3976c6}.card span{display:block;font-size:34px;margin-bottom:9px}#lesson{background:white;border-radius:15px;padding:20px;box-shadow:0 3px 10px #0002;margin-top:24px;min-height:110px}#activities{background:#deecff;max-width:none}footer{background:var(--blue);color:white;text-align:center;padding:22px}p{max-width:700px;margin:12px auto}
+</style>
 </head>
-
 <body>
-
-<header>
-    <h1>St. Christopher's Academy</h1>
-    <p>Welcome to our school website</p>
-</header>
-
-<section>
-    <h2>Welcome!</h2>
-    <p>Welcome to St. Christopher's Academy.</p>
-
-    <button>Contact Us</button>
-</section>
-
-<section>
-    <h2>About Our School</h2>
-    <p>We are committed to learning, discipline and excellence.</p>
-</section>
-
+<header id="home"><h1>🏫 St. Christopher's Academy</h1><p>Welcome to Our School Website</p><p>Learning • Knowledge • Excellence</p></header>
+<nav aria-label="Main navigation"><a href="#home">Home</a><a href="#about">About</a><a href="#subjects">Subjects</a><a href="#activities">Activities</a><a href="#contact">Contact</a></nav>
+<main>
+<section id="about"><h2>About Our School</h2><p>Welcome to this student-created website project for St. Christopher's Academy in Vepery, Chennai. Explore different school subjects and learning activities.</p></section>
+<section id="subjects"><h2>📚 Explore Our Subjects</h2><p>Tap a subject to view its learning topics.</p><div class="cards">
+<button class="card" data-subject="English"><span>📖</span>English</button>
+<button class="card" data-subject="Mathematics"><span>➗</span>Mathematics</button>
+<button class="card" data-subject="Science"><span>🔬</span>Science</button>
+<button class="card" data-subject="Social Science"><span>🌍</span>Social Science</button>
+<button class="card" data-subject="Tamil"><span>📗</span>Tamil</button>
+<button class="card" data-subject="Hindi"><span>📝</span>Hindi</button>
+<button class="card" data-subject="Computer Science"><span>💻</span>Computer Science</button>
+<button class="card" data-subject="Art & Craft"><span>🎨</span>Art & Craft</button>
+<button class="card" data-subject="Physical Education"><span>⚽</span>Physical Education</button>
+<button class="card" data-subject="Environmental Studies"><span>🌱</span>Environmental Studies</button>
+</div><div id="lesson" aria-live="polite"><h3>Choose a subject above</h3><p>Its topics will appear here.</p></div></section>
+<section id="activities"><h2>🏆 Learning Activities</h2><p>🎨 Art and craft projects · ⚽ Sports and games · 🎤 Cultural programmes · 📚 Reading · 🔬 Science experiments</p></section>
+<section id="contact"><h2>📍 Contact</h2><p>St. Christopher's Academy — Vepery, Chennai, Tamil Nadu</p><p>For official contact details, please refer to the school's verified communication channels.</p></section>
+</main>
+<footer>© 2026 St. Christopher's Academy — Unofficial student website project</footer>
+<script>
+const topics={
+'English':'Reading, grammar, writing, poetry and stories.',
+'Mathematics':'Numbers, fractions, algebra, geometry and problem solving.',
+'Science':'Physics, Chemistry, Biology and experiments.',
+'Social Science':'History, Geography, Civics and communities.',
+'Tamil':'Tamil reading, writing, vocabulary and literature.',
+'Hindi':'Hindi reading, vocabulary, grammar and writing.',
+'Computer Science':'Computer basics, coding, internet safety and technology.',
+'Art & Craft':'Drawing, painting, paper crafts and creativity.',
+'Physical Education':'Fitness, games, teamwork and sports.',
+'Environmental Studies':'Plants, animals, water, nature and the environment.'
+};
+document.querySelectorAll('[data-subject]').forEach(button=>{
+button.addEventListener('click',()=>{
+const subject=button.dataset.subject;
+document.getElementById('lesson').innerHTML='<h3>'+subject+'</h3><p>'+topics[subject]+'</p>';
+document.getElementById('lesson').scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+});
+</script>
 </body>
 </html>
